@@ -30,6 +30,7 @@ requirements:
     - pydantic 1.*
     - PyGithub
     - python-dateutil >=2.7
+    - python-dotenv
     - PyYAML
     - requests 2.*
 
