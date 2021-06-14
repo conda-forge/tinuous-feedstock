@@ -1,5 +1,5 @@
 {% set name = "tinuous" %}
-{% set version = "0.1.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 597a43c00c2512b5a82034adc31c36ca84633010f6c186e153b3f438b4ce1271
+  sha256: 51597e0cbb6139c7ecf40c51a6d10c9f595c6a21560334d042d7271eb0b13363
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - tinuous = tinuous.__main__:main
 
@@ -30,6 +30,7 @@ requirements:
     - pydantic 1.*
     - PyGithub
     - python-dateutil >=2.7
+    - python-dotenv
     - PyYAML
     - requests 2.*
 
