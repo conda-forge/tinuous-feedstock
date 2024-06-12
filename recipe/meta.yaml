@@ -20,19 +20,20 @@ requirements:
   host:
     - python >=3.8
     - pip
-    - setuptools
+    - versioningit
   run:
     - python >=3.8
     - click
     - click-loglevel >=0.2
     - datalad
-    - in_place >=0.4
-    - pydantic 1.*
-    - PyGithub
+    - ghtoken >=0.1,<1.0
+    - in_place 1.*
+    - pydantic 2.*
     - python-dateutil >=2.7
     - python-dotenv
     - PyYAML
     - requests 2.*
+    - typing_extensions
 
 test:
   imports:
