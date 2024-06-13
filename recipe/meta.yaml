@@ -1,5 +1,5 @@
 {% set name = "tinuous" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5c0ac2907cadff890338c271be31fa59cb291f02f9879e18a0fa43be62da447b
+  sha256: 0a45e1d559feccc8a8b6fd46be82afb1bf30f0942f6c30cff5504a90106d92e2
 
 build:
   noarch: python
@@ -20,19 +20,20 @@ requirements:
   host:
     - python >=3.8
     - pip
-    - setuptools
+    - versioningit
   run:
     - python >=3.8
     - click
     - click-loglevel >=0.2
     - datalad
-    - in_place >=0.4
-    - pydantic 1.*
-    - PyGithub
+    - ghtoken >=0.1,<1.0
+    - in_place 1.*
+    - pydantic 2.*
     - python-dateutil >=2.7
     - python-dotenv
     - PyYAML
     - requests 2.*
+    - typing_extensions
 
 test:
   imports:
