@@ -6,23 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0a45e1d559feccc8a8b6fd46be82afb1bf30f0942f6c30cff5504a90106d92e2
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - tinuous = tinuous.__main__:main
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
+    - setuptools
     - versioningit
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - click
     - click-loglevel >=0.2
     - datalad
@@ -36,6 +37,8 @@ requirements:
     - typing_extensions
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - tinuous
   commands:
