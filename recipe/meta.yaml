@@ -1,5 +1,5 @@
 {% set name = "tinuous" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0a45e1d559feccc8a8b6fd46be82afb1bf30f0942f6c30cff5504a90106d92e2
+  sha256: 0ce68f4979b7767998c4dd28ae45e42b87281a8e7c3f73fae5194d3f53cca15a
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - tinuous = tinuous.__main__:main
